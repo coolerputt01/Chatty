@@ -19,9 +19,9 @@ void initApp(){
 	keypad(stdscr,TRUE);
     int height,width;
     getmaxyx(stdscr,height,width);
-    chatWindow = newwin(height - 3,width,0,0);
+    chatWindow = newwin(height - 5,width,3,0);
     inputWindow = newwin(3,width,height-3,0);
-    scrollok(chatWindow,TRUE);
+    mvprintw(1,1,"Chatty");
     box(chatWindow,0,0);
     box(inputWindow,0,0);
     wrefresh(inputWindow);
@@ -40,8 +40,7 @@ void drawChatwindow(const std::string& text){
     if(texts.size() > maxRows){
         start = texts.size() - maxRows;
     }
-
-    int row = 1;
+    int row = 2;
     for(size_t i = start; i < texts.size(); i++){
         mvwprintw(chatWindow, row++, 1, "%s", texts[i].c_str());
     }
