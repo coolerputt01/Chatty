@@ -1,0 +1,160 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"install"
+		],
+		"files" : 
+		[
+			"CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 284,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 291,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 295,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 297,
+				"parent" : 0
+			}
+		]
+	},
+	"installers" : 
+	[
+		{
+			"backtrace" : 1,
+			"component" : "Unspecified",
+			"destination" : "lib",
+			"paths" : 
+			[
+				"libixwebsocket.a"
+			],
+			"targetId" : "ixwebsocket::@6890427a1f51a3e7e1df",
+			"targetIndex" : 0,
+			"type" : "target"
+		},
+		{
+			"backtrace" : 1,
+			"component" : "Unspecified",
+			"destination" : "include",
+			"paths" : 
+			[
+				"IXBase64.h",
+				"IXBench.h",
+				"IXCancellationRequest.h",
+				"IXConnectionState.h",
+				"IXDNSLookup.h",
+				"IXExponentialBackoff.h",
+				"IXGetFreePort.h",
+				"IXGzipCodec.h",
+				"IXHttp.h",
+				"IXHttpClient.h",
+				"IXHttpServer.h",
+				"IXNetSystem.h",
+				"IXProgressCallback.h",
+				"IXSelectInterrupt.h",
+				"IXSelectInterruptFactory.h",
+				"IXSelectInterruptPipe.h",
+				"IXSelectInterruptEvent.h",
+				"IXSetThreadName.h",
+				"IXSocket.h",
+				"IXSocketConnect.h",
+				"IXSocketFactory.h",
+				"IXSocketServer.h",
+				"IXSocketTLSOptions.h",
+				"IXStrCaseCompare.h",
+				"IXUdpSocket.h",
+				"IXUniquePtr.h",
+				"IXUrlParser.h",
+				"IXUuid.h",
+				"IXUtf8Validator.h",
+				"IXUserAgent.h",
+				"IXWebSocket.h",
+				"IXWebSocketCloseConstants.h",
+				"IXWebSocketCloseInfo.h",
+				"IXWebSocketErrorInfo.h",
+				"IXWebSocketHandshake.h",
+				"IXWebSocketHandshakeKeyGen.h",
+				"IXWebSocketHttpHeaders.h",
+				"IXWebSocketInitResult.h",
+				"IXWebSocketMessage.h",
+				"IXWebSocketMessageType.h",
+				"IXWebSocketOpenInfo.h",
+				"IXWebSocketPerMessageDeflate.h",
+				"IXWebSocketPerMessageDeflateCodec.h",
+				"IXWebSocketPerMessageDeflateOptions.h",
+				"IXWebSocketProxyServer.h",
+				"IXWebSocketSendData.h",
+				"IXWebSocketSendInfo.h",
+				"IXWebSocketServer.h",
+				"IXWebSocketTransport.h",
+				"IXWebSocketVersion.h"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 2,
+			"component" : "Unspecified",
+			"destination" : "lib/cmake/ixwebsocket",
+			"paths" : 
+			[
+				"/workspaces/Chatty/build/ixwebsocket-config.cmake"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 3,
+			"component" : "Unspecified",
+			"destination" : "lib/pkgconfig",
+			"paths" : 
+			[
+				"/workspaces/Chatty/build/ixwebsocket.pc"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 4,
+			"component" : "Unspecified",
+			"destination" : "lib/cmake/ixwebsocket",
+			"exportName" : "ixwebsocket",
+			"exportTargets" : 
+			[
+				{
+					"id" : "ixwebsocket::@6890427a1f51a3e7e1df",
+					"index" : 0
+				}
+			],
+			"paths" : 
+			[
+				"CMakeFiles/Export/dbc99e06a99e696141dafd40631f8060/ixwebsocket-targets.cmake"
+			],
+			"type" : "export"
+		}
+	],
+	"paths" : 
+	{
+		"build" : ".",
+		"source" : "."
+	}
+}

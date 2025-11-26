@@ -1,0 +1,218 @@
+[
+{
+  "directory": "/workspaces/Chatty/build",
+  "command": "/usr/bin/clang++ -DIXWEBSOCKET_USE_ZLIB -I/workspaces/Chatty/src/server/ixwebsocket  -Wall -Wextra -pedantic -Wshorten-64-to-32 -g -std=c++11 -fPIC -o CMakeFiles/ixwebsocket.dir/IXBench.cpp.o -c /workspaces/Chatty/src/server/ixwebsocket/IXBench.cpp",
+  "file": "/workspaces/Chatty/src/server/ixwebsocket/IXBench.cpp",
+  "output": "CMakeFiles/ixwebsocket.dir/IXBench.cpp.o"
+},
+{
+  "directory": "/workspaces/Chatty/build",
+  "command": "/usr/bin/clang++ -DIXWEBSOCKET_USE_ZLIB -I/workspaces/Chatty/src/server/ixwebsocket  -Wall -Wextra -pedantic -Wshorten-64-to-32 -g -std=c++11 -fPIC -o CMakeFiles/ixwebsocket.dir/IXCancellationRequest.cpp.o -c /workspaces/Chatty/src/server/ixwebsocket/IXCancellationRequest.cpp",
+  "file": "/workspaces/Chatty/src/server/ixwebsocket/IXCancellationRequest.cpp",
+  "output": "CMakeFiles/ixwebsocket.dir/IXCancellationRequest.cpp.o"
+},
+{
+  "directory": "/workspaces/Chatty/build",
+  "command": "/usr/bin/clang++ -DIXWEBSOCKET_USE_ZLIB -I/workspaces/Chatty/src/server/ixwebsocket  -Wall -Wextra -pedantic -Wshorten-64-to-32 -g -std=c++11 -fPIC -o CMakeFiles/ixwebsocket.dir/IXConnectionState.cpp.o -c /workspaces/Chatty/src/server/ixwebsocket/IXConnectionState.cpp",
+  "file": "/workspaces/Chatty/src/server/ixwebsocket/IXConnectionState.cpp",
+  "output": "CMakeFiles/ixwebsocket.dir/IXConnectionState.cpp.o"
+},
+{
+  "directory": "/workspaces/Chatty/build",
+  "command": "/usr/bin/clang++ -DIXWEBSOCKET_USE_ZLIB -I/workspaces/Chatty/src/server/ixwebsocket  -Wall -Wextra -pedantic -Wshorten-64-to-32 -g -std=c++11 -fPIC -o CMakeFiles/ixwebsocket.dir/IXDNSLookup.cpp.o -c /workspaces/Chatty/src/server/ixwebsocket/IXDNSLookup.cpp",
+  "file": "/workspaces/Chatty/src/server/ixwebsocket/IXDNSLookup.cpp",
+  "output": "CMakeFiles/ixwebsocket.dir/IXDNSLookup.cpp.o"
+},
+{
+  "directory": "/workspaces/Chatty/build",
+  "command": "/usr/bin/clang++ -DIXWEBSOCKET_USE_ZLIB -I/workspaces/Chatty/src/server/ixwebsocket  -Wall -Wextra -pedantic -Wshorten-64-to-32 -g -std=c++11 -fPIC -o CMakeFiles/ixwebsocket.dir/IXExponentialBackoff.cpp.o -c /workspaces/Chatty/src/server/ixwebsocket/IXExponentialBackoff.cpp",
+  "file": "/workspaces/Chatty/src/server/ixwebsocket/IXExponentialBackoff.cpp",
+  "output": "CMakeFiles/ixwebsocket.dir/IXExponentialBackoff.cpp.o"
+},
+{
+  "directory": "/workspaces/Chatty/build",
+  "command": "/usr/bin/clang++ -DIXWEBSOCKET_USE_ZLIB -I/workspaces/Chatty/src/server/ixwebsocket  -Wall -Wextra -pedantic -Wshorten-64-to-32 -g -std=c++11 -fPIC -o CMakeFiles/ixwebsocket.dir/IXGetFreePort.cpp.o -c /workspaces/Chatty/src/server/ixwebsocket/IXGetFreePort.cpp",
+  "file": "/workspaces/Chatty/src/server/ixwebsocket/IXGetFreePort.cpp",
+  "output": "CMakeFiles/ixwebsocket.dir/IXGetFreePort.cpp.o"
+},
+{
+  "directory": "/workspaces/Chatty/build",
+  "command": "/usr/bin/clang++ -DIXWEBSOCKET_USE_ZLIB -I/workspaces/Chatty/src/server/ixwebsocket  -Wall -Wextra -pedantic -Wshorten-64-to-32 -g -std=c++11 -fPIC -o CMakeFiles/ixwebsocket.dir/IXGzipCodec.cpp.o -c /workspaces/Chatty/src/server/ixwebsocket/IXGzipCodec.cpp",
+  "file": "/workspaces/Chatty/src/server/ixwebsocket/IXGzipCodec.cpp",
+  "output": "CMakeFiles/ixwebsocket.dir/IXGzipCodec.cpp.o"
+},
+{
+  "directory": "/workspaces/Chatty/build",
+  "command": "/usr/bin/clang++ -DIXWEBSOCKET_USE_ZLIB -I/workspaces/Chatty/src/server/ixwebsocket  -Wall -Wextra -pedantic -Wshorten-64-to-32 -g -std=c++11 -fPIC -o CMakeFiles/ixwebsocket.dir/IXHttp.cpp.o -c /workspaces/Chatty/src/server/ixwebsocket/IXHttp.cpp",
+  "file": "/workspaces/Chatty/src/server/ixwebsocket/IXHttp.cpp",
+  "output": "CMakeFiles/ixwebsocket.dir/IXHttp.cpp.o"
+},
+{
+  "directory": "/workspaces/Chatty/build",
+  "command": "/usr/bin/clang++ -DIXWEBSOCKET_USE_ZLIB -I/workspaces/Chatty/src/server/ixwebsocket  -Wall -Wextra -pedantic -Wshorten-64-to-32 -g -std=c++11 -fPIC -o CMakeFiles/ixwebsocket.dir/IXHttpClient.cpp.o -c /workspaces/Chatty/src/server/ixwebsocket/IXHttpClient.cpp",
+  "file": "/workspaces/Chatty/src/server/ixwebsocket/IXHttpClient.cpp",
+  "output": "CMakeFiles/ixwebsocket.dir/IXHttpClient.cpp.o"
+},
+{
+  "directory": "/workspaces/Chatty/build",
+  "command": "/usr/bin/clang++ -DIXWEBSOCKET_USE_ZLIB -I/workspaces/Chatty/src/server/ixwebsocket  -Wall -Wextra -pedantic -Wshorten-64-to-32 -g -std=c++11 -fPIC -o CMakeFiles/ixwebsocket.dir/IXHttpServer.cpp.o -c /workspaces/Chatty/src/server/ixwebsocket/IXHttpServer.cpp",
+  "file": "/workspaces/Chatty/src/server/ixwebsocket/IXHttpServer.cpp",
+  "output": "CMakeFiles/ixwebsocket.dir/IXHttpServer.cpp.o"
+},
+{
+  "directory": "/workspaces/Chatty/build",
+  "command": "/usr/bin/clang++ -DIXWEBSOCKET_USE_ZLIB -I/workspaces/Chatty/src/server/ixwebsocket  -Wall -Wextra -pedantic -Wshorten-64-to-32 -g -std=c++11 -fPIC -o CMakeFiles/ixwebsocket.dir/IXNetSystem.cpp.o -c /workspaces/Chatty/src/server/ixwebsocket/IXNetSystem.cpp",
+  "file": "/workspaces/Chatty/src/server/ixwebsocket/IXNetSystem.cpp",
+  "output": "CMakeFiles/ixwebsocket.dir/IXNetSystem.cpp.o"
+},
+{
+  "directory": "/workspaces/Chatty/build",
+  "command": "/usr/bin/clang++ -DIXWEBSOCKET_USE_ZLIB -I/workspaces/Chatty/src/server/ixwebsocket  -Wall -Wextra -pedantic -Wshorten-64-to-32 -g -std=c++11 -fPIC -o CMakeFiles/ixwebsocket.dir/IXSelectInterrupt.cpp.o -c /workspaces/Chatty/src/server/ixwebsocket/IXSelectInterrupt.cpp",
+  "file": "/workspaces/Chatty/src/server/ixwebsocket/IXSelectInterrupt.cpp",
+  "output": "CMakeFiles/ixwebsocket.dir/IXSelectInterrupt.cpp.o"
+},
+{
+  "directory": "/workspaces/Chatty/build",
+  "command": "/usr/bin/clang++ -DIXWEBSOCKET_USE_ZLIB -I/workspaces/Chatty/src/server/ixwebsocket  -Wall -Wextra -pedantic -Wshorten-64-to-32 -g -std=c++11 -fPIC -o CMakeFiles/ixwebsocket.dir/IXSelectInterruptFactory.cpp.o -c /workspaces/Chatty/src/server/ixwebsocket/IXSelectInterruptFactory.cpp",
+  "file": "/workspaces/Chatty/src/server/ixwebsocket/IXSelectInterruptFactory.cpp",
+  "output": "CMakeFiles/ixwebsocket.dir/IXSelectInterruptFactory.cpp.o"
+},
+{
+  "directory": "/workspaces/Chatty/build",
+  "command": "/usr/bin/clang++ -DIXWEBSOCKET_USE_ZLIB -I/workspaces/Chatty/src/server/ixwebsocket  -Wall -Wextra -pedantic -Wshorten-64-to-32 -g -std=c++11 -fPIC -o CMakeFiles/ixwebsocket.dir/IXSelectInterruptPipe.cpp.o -c /workspaces/Chatty/src/server/ixwebsocket/IXSelectInterruptPipe.cpp",
+  "file": "/workspaces/Chatty/src/server/ixwebsocket/IXSelectInterruptPipe.cpp",
+  "output": "CMakeFiles/ixwebsocket.dir/IXSelectInterruptPipe.cpp.o"
+},
+{
+  "directory": "/workspaces/Chatty/build",
+  "command": "/usr/bin/clang++ -DIXWEBSOCKET_USE_ZLIB -I/workspaces/Chatty/src/server/ixwebsocket  -Wall -Wextra -pedantic -Wshorten-64-to-32 -g -std=c++11 -fPIC -o CMakeFiles/ixwebsocket.dir/IXSelectInterruptEvent.cpp.o -c /workspaces/Chatty/src/server/ixwebsocket/IXSelectInterruptEvent.cpp",
+  "file": "/workspaces/Chatty/src/server/ixwebsocket/IXSelectInterruptEvent.cpp",
+  "output": "CMakeFiles/ixwebsocket.dir/IXSelectInterruptEvent.cpp.o"
+},
+{
+  "directory": "/workspaces/Chatty/build",
+  "command": "/usr/bin/clang++ -DIXWEBSOCKET_USE_ZLIB -I/workspaces/Chatty/src/server/ixwebsocket  -Wall -Wextra -pedantic -Wshorten-64-to-32 -g -std=c++11 -fPIC -o CMakeFiles/ixwebsocket.dir/IXSetThreadName.cpp.o -c /workspaces/Chatty/src/server/ixwebsocket/IXSetThreadName.cpp",
+  "file": "/workspaces/Chatty/src/server/ixwebsocket/IXSetThreadName.cpp",
+  "output": "CMakeFiles/ixwebsocket.dir/IXSetThreadName.cpp.o"
+},
+{
+  "directory": "/workspaces/Chatty/build",
+  "command": "/usr/bin/clang++ -DIXWEBSOCKET_USE_ZLIB -I/workspaces/Chatty/src/server/ixwebsocket  -Wall -Wextra -pedantic -Wshorten-64-to-32 -g -std=c++11 -fPIC -o CMakeFiles/ixwebsocket.dir/IXSocket.cpp.o -c /workspaces/Chatty/src/server/ixwebsocket/IXSocket.cpp",
+  "file": "/workspaces/Chatty/src/server/ixwebsocket/IXSocket.cpp",
+  "output": "CMakeFiles/ixwebsocket.dir/IXSocket.cpp.o"
+},
+{
+  "directory": "/workspaces/Chatty/build",
+  "command": "/usr/bin/clang++ -DIXWEBSOCKET_USE_ZLIB -I/workspaces/Chatty/src/server/ixwebsocket  -Wall -Wextra -pedantic -Wshorten-64-to-32 -g -std=c++11 -fPIC -o CMakeFiles/ixwebsocket.dir/IXSocketConnect.cpp.o -c /workspaces/Chatty/src/server/ixwebsocket/IXSocketConnect.cpp",
+  "file": "/workspaces/Chatty/src/server/ixwebsocket/IXSocketConnect.cpp",
+  "output": "CMakeFiles/ixwebsocket.dir/IXSocketConnect.cpp.o"
+},
+{
+  "directory": "/workspaces/Chatty/build",
+  "command": "/usr/bin/clang++ -DIXWEBSOCKET_USE_ZLIB -I/workspaces/Chatty/src/server/ixwebsocket  -Wall -Wextra -pedantic -Wshorten-64-to-32 -g -std=c++11 -fPIC -o CMakeFiles/ixwebsocket.dir/IXSocketFactory.cpp.o -c /workspaces/Chatty/src/server/ixwebsocket/IXSocketFactory.cpp",
+  "file": "/workspaces/Chatty/src/server/ixwebsocket/IXSocketFactory.cpp",
+  "output": "CMakeFiles/ixwebsocket.dir/IXSocketFactory.cpp.o"
+},
+{
+  "directory": "/workspaces/Chatty/build",
+  "command": "/usr/bin/clang++ -DIXWEBSOCKET_USE_ZLIB -I/workspaces/Chatty/src/server/ixwebsocket  -Wall -Wextra -pedantic -Wshorten-64-to-32 -g -std=c++11 -fPIC -o CMakeFiles/ixwebsocket.dir/IXSocketServer.cpp.o -c /workspaces/Chatty/src/server/ixwebsocket/IXSocketServer.cpp",
+  "file": "/workspaces/Chatty/src/server/ixwebsocket/IXSocketServer.cpp",
+  "output": "CMakeFiles/ixwebsocket.dir/IXSocketServer.cpp.o"
+},
+{
+  "directory": "/workspaces/Chatty/build",
+  "command": "/usr/bin/clang++ -DIXWEBSOCKET_USE_ZLIB -I/workspaces/Chatty/src/server/ixwebsocket  -Wall -Wextra -pedantic -Wshorten-64-to-32 -g -std=c++11 -fPIC -o CMakeFiles/ixwebsocket.dir/IXSocketTLSOptions.cpp.o -c /workspaces/Chatty/src/server/ixwebsocket/IXSocketTLSOptions.cpp",
+  "file": "/workspaces/Chatty/src/server/ixwebsocket/IXSocketTLSOptions.cpp",
+  "output": "CMakeFiles/ixwebsocket.dir/IXSocketTLSOptions.cpp.o"
+},
+{
+  "directory": "/workspaces/Chatty/build",
+  "command": "/usr/bin/clang++ -DIXWEBSOCKET_USE_ZLIB -I/workspaces/Chatty/src/server/ixwebsocket  -Wall -Wextra -pedantic -Wshorten-64-to-32 -g -std=c++11 -fPIC -o CMakeFiles/ixwebsocket.dir/IXStrCaseCompare.cpp.o -c /workspaces/Chatty/src/server/ixwebsocket/IXStrCaseCompare.cpp",
+  "file": "/workspaces/Chatty/src/server/ixwebsocket/IXStrCaseCompare.cpp",
+  "output": "CMakeFiles/ixwebsocket.dir/IXStrCaseCompare.cpp.o"
+},
+{
+  "directory": "/workspaces/Chatty/build",
+  "command": "/usr/bin/clang++ -DIXWEBSOCKET_USE_ZLIB -I/workspaces/Chatty/src/server/ixwebsocket  -Wall -Wextra -pedantic -Wshorten-64-to-32 -g -std=c++11 -fPIC -o CMakeFiles/ixwebsocket.dir/IXUdpSocket.cpp.o -c /workspaces/Chatty/src/server/ixwebsocket/IXUdpSocket.cpp",
+  "file": "/workspaces/Chatty/src/server/ixwebsocket/IXUdpSocket.cpp",
+  "output": "CMakeFiles/ixwebsocket.dir/IXUdpSocket.cpp.o"
+},
+{
+  "directory": "/workspaces/Chatty/build",
+  "command": "/usr/bin/clang++ -DIXWEBSOCKET_USE_ZLIB -I/workspaces/Chatty/src/server/ixwebsocket  -Wall -Wextra -pedantic -Wshorten-64-to-32 -g -std=c++11 -fPIC -o CMakeFiles/ixwebsocket.dir/IXUrlParser.cpp.o -c /workspaces/Chatty/src/server/ixwebsocket/IXUrlParser.cpp",
+  "file": "/workspaces/Chatty/src/server/ixwebsocket/IXUrlParser.cpp",
+  "output": "CMakeFiles/ixwebsocket.dir/IXUrlParser.cpp.o"
+},
+{
+  "directory": "/workspaces/Chatty/build",
+  "command": "/usr/bin/clang++ -DIXWEBSOCKET_USE_ZLIB -I/workspaces/Chatty/src/server/ixwebsocket  -Wall -Wextra -pedantic -Wshorten-64-to-32 -g -std=c++11 -fPIC -o CMakeFiles/ixwebsocket.dir/IXUuid.cpp.o -c /workspaces/Chatty/src/server/ixwebsocket/IXUuid.cpp",
+  "file": "/workspaces/Chatty/src/server/ixwebsocket/IXUuid.cpp",
+  "output": "CMakeFiles/ixwebsocket.dir/IXUuid.cpp.o"
+},
+{
+  "directory": "/workspaces/Chatty/build",
+  "command": "/usr/bin/clang++ -DIXWEBSOCKET_USE_ZLIB -I/workspaces/Chatty/src/server/ixwebsocket  -Wall -Wextra -pedantic -Wshorten-64-to-32 -g -std=c++11 -fPIC -o CMakeFiles/ixwebsocket.dir/IXUserAgent.cpp.o -c /workspaces/Chatty/src/server/ixwebsocket/IXUserAgent.cpp",
+  "file": "/workspaces/Chatty/src/server/ixwebsocket/IXUserAgent.cpp",
+  "output": "CMakeFiles/ixwebsocket.dir/IXUserAgent.cpp.o"
+},
+{
+  "directory": "/workspaces/Chatty/build",
+  "command": "/usr/bin/clang++ -DIXWEBSOCKET_USE_ZLIB -I/workspaces/Chatty/src/server/ixwebsocket  -Wall -Wextra -pedantic -Wshorten-64-to-32 -g -std=c++11 -fPIC -o CMakeFiles/ixwebsocket.dir/IXWebSocket.cpp.o -c /workspaces/Chatty/src/server/ixwebsocket/IXWebSocket.cpp",
+  "file": "/workspaces/Chatty/src/server/ixwebsocket/IXWebSocket.cpp",
+  "output": "CMakeFiles/ixwebsocket.dir/IXWebSocket.cpp.o"
+},
+{
+  "directory": "/workspaces/Chatty/build",
+  "command": "/usr/bin/clang++ -DIXWEBSOCKET_USE_ZLIB -I/workspaces/Chatty/src/server/ixwebsocket  -Wall -Wextra -pedantic -Wshorten-64-to-32 -g -std=c++11 -fPIC -o CMakeFiles/ixwebsocket.dir/IXWebSocketCloseConstants.cpp.o -c /workspaces/Chatty/src/server/ixwebsocket/IXWebSocketCloseConstants.cpp",
+  "file": "/workspaces/Chatty/src/server/ixwebsocket/IXWebSocketCloseConstants.cpp",
+  "output": "CMakeFiles/ixwebsocket.dir/IXWebSocketCloseConstants.cpp.o"
+},
+{
+  "directory": "/workspaces/Chatty/build",
+  "command": "/usr/bin/clang++ -DIXWEBSOCKET_USE_ZLIB -I/workspaces/Chatty/src/server/ixwebsocket  -Wall -Wextra -pedantic -Wshorten-64-to-32 -g -std=c++11 -fPIC -o CMakeFiles/ixwebsocket.dir/IXWebSocketHandshake.cpp.o -c /workspaces/Chatty/src/server/ixwebsocket/IXWebSocketHandshake.cpp",
+  "file": "/workspaces/Chatty/src/server/ixwebsocket/IXWebSocketHandshake.cpp",
+  "output": "CMakeFiles/ixwebsocket.dir/IXWebSocketHandshake.cpp.o"
+},
+{
+  "directory": "/workspaces/Chatty/build",
+  "command": "/usr/bin/clang++ -DIXWEBSOCKET_USE_ZLIB -I/workspaces/Chatty/src/server/ixwebsocket  -Wall -Wextra -pedantic -Wshorten-64-to-32 -g -std=c++11 -fPIC -o CMakeFiles/ixwebsocket.dir/IXWebSocketHttpHeaders.cpp.o -c /workspaces/Chatty/src/server/ixwebsocket/IXWebSocketHttpHeaders.cpp",
+  "file": "/workspaces/Chatty/src/server/ixwebsocket/IXWebSocketHttpHeaders.cpp",
+  "output": "CMakeFiles/ixwebsocket.dir/IXWebSocketHttpHeaders.cpp.o"
+},
+{
+  "directory": "/workspaces/Chatty/build",
+  "command": "/usr/bin/clang++ -DIXWEBSOCKET_USE_ZLIB -I/workspaces/Chatty/src/server/ixwebsocket  -Wall -Wextra -pedantic -Wshorten-64-to-32 -g -std=c++11 -fPIC -o CMakeFiles/ixwebsocket.dir/IXWebSocketPerMessageDeflate.cpp.o -c /workspaces/Chatty/src/server/ixwebsocket/IXWebSocketPerMessageDeflate.cpp",
+  "file": "/workspaces/Chatty/src/server/ixwebsocket/IXWebSocketPerMessageDeflate.cpp",
+  "output": "CMakeFiles/ixwebsocket.dir/IXWebSocketPerMessageDeflate.cpp.o"
+},
+{
+  "directory": "/workspaces/Chatty/build",
+  "command": "/usr/bin/clang++ -DIXWEBSOCKET_USE_ZLIB -I/workspaces/Chatty/src/server/ixwebsocket  -Wall -Wextra -pedantic -Wshorten-64-to-32 -g -std=c++11 -fPIC -o CMakeFiles/ixwebsocket.dir/IXWebSocketPerMessageDeflateCodec.cpp.o -c /workspaces/Chatty/src/server/ixwebsocket/IXWebSocketPerMessageDeflateCodec.cpp",
+  "file": "/workspaces/Chatty/src/server/ixwebsocket/IXWebSocketPerMessageDeflateCodec.cpp",
+  "output": "CMakeFiles/ixwebsocket.dir/IXWebSocketPerMessageDeflateCodec.cpp.o"
+},
+{
+  "directory": "/workspaces/Chatty/build",
+  "command": "/usr/bin/clang++ -DIXWEBSOCKET_USE_ZLIB -I/workspaces/Chatty/src/server/ixwebsocket  -Wall -Wextra -pedantic -Wshorten-64-to-32 -g -std=c++11 -fPIC -o CMakeFiles/ixwebsocket.dir/IXWebSocketPerMessageDeflateOptions.cpp.o -c /workspaces/Chatty/src/server/ixwebsocket/IXWebSocketPerMessageDeflateOptions.cpp",
+  "file": "/workspaces/Chatty/src/server/ixwebsocket/IXWebSocketPerMessageDeflateOptions.cpp",
+  "output": "CMakeFiles/ixwebsocket.dir/IXWebSocketPerMessageDeflateOptions.cpp.o"
+},
+{
+  "directory": "/workspaces/Chatty/build",
+  "command": "/usr/bin/clang++ -DIXWEBSOCKET_USE_ZLIB -I/workspaces/Chatty/src/server/ixwebsocket  -Wall -Wextra -pedantic -Wshorten-64-to-32 -g -std=c++11 -fPIC -o CMakeFiles/ixwebsocket.dir/IXWebSocketProxyServer.cpp.o -c /workspaces/Chatty/src/server/ixwebsocket/IXWebSocketProxyServer.cpp",
+  "file": "/workspaces/Chatty/src/server/ixwebsocket/IXWebSocketProxyServer.cpp",
+  "output": "CMakeFiles/ixwebsocket.dir/IXWebSocketProxyServer.cpp.o"
+},
+{
+  "directory": "/workspaces/Chatty/build",
+  "command": "/usr/bin/clang++ -DIXWEBSOCKET_USE_ZLIB -I/workspaces/Chatty/src/server/ixwebsocket  -Wall -Wextra -pedantic -Wshorten-64-to-32 -g -std=c++11 -fPIC -o CMakeFiles/ixwebsocket.dir/IXWebSocketServer.cpp.o -c /workspaces/Chatty/src/server/ixwebsocket/IXWebSocketServer.cpp",
+  "file": "/workspaces/Chatty/src/server/ixwebsocket/IXWebSocketServer.cpp",
+  "output": "CMakeFiles/ixwebsocket.dir/IXWebSocketServer.cpp.o"
+},
+{
+  "directory": "/workspaces/Chatty/build",
+  "command": "/usr/bin/clang++ -DIXWEBSOCKET_USE_ZLIB -I/workspaces/Chatty/src/server/ixwebsocket  -Wall -Wextra -pedantic -Wshorten-64-to-32 -g -std=c++11 -fPIC -o CMakeFiles/ixwebsocket.dir/IXWebSocketTransport.cpp.o -c /workspaces/Chatty/src/server/ixwebsocket/IXWebSocketTransport.cpp",
+  "file": "/workspaces/Chatty/src/server/ixwebsocket/IXWebSocketTransport.cpp",
+  "output": "CMakeFiles/ixwebsocket.dir/IXWebSocketTransport.cpp.o"
+}
+]

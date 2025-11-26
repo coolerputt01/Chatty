@@ -4,6 +4,7 @@
 #include <string>
 #include <iostream>
 
+
 #pragma once
 
 ix::WebSocket ws;
@@ -31,3 +32,4 @@ void closeConnection() {
 void sendMessage(const std::string& text){
     ws.send(text);
 }
+

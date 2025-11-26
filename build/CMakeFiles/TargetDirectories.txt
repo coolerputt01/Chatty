@@ -1,0 +1,7 @@
+/workspaces/Chatty/build/CMakeFiles/ixwebsocket.dir
+/workspaces/Chatty/build/CMakeFiles/edit_cache.dir
+/workspaces/Chatty/build/CMakeFiles/rebuild_cache.dir
+/workspaces/Chatty/build/CMakeFiles/list_install_components.dir
+/workspaces/Chatty/build/CMakeFiles/install.dir
+/workspaces/Chatty/build/CMakeFiles/install/local.dir
+/workspaces/Chatty/build/CMakeFiles/install/strip.dir

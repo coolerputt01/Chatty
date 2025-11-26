@@ -1,2 +1,4 @@
 /linux
 /src/server/pyenv
+.env
+/src/user/.env
