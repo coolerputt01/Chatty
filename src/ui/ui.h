@@ -107,6 +107,7 @@ void drawSignUp() {
 
     wrefresh(authWindow);
 }
+
 void authLoop() {
     int ch;
 

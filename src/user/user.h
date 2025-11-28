@@ -12,6 +12,9 @@ char* supabaseApikey = std::getenv("SUPABASE_APIKEY");
 void validatePath(){
     if (supabaseUrl == nullptr || supabaseApikey == nullptr){
         std::cerr<<"An error occured in opening path to env"<<std::endl<<std::flush;
+        std::exit(1);
+    }else {
+        std::cout<<supabaseUrl<<" "<<supabaseApikey<<std::endl;
     }
 }
 
@@ -35,10 +38,24 @@ class User {
 
         void createNewUser(){
             validatePath();
+            created_at.erase(std::remove(created_at.begin(), created_at.end(), '\n'), created_at.end());
             
-            std::string jsonData = "{ \"username\": \"" + username +
-                       "\", \"password\": \"" + password +
-                       "\", \"created_at\": \"" + created_at + "\" }";
+            auto escape_json = [](const std::string& s) {
+                std::string out;
+                for (char c : s) {
+                    if (c == '"') out += "\\\"";
+                    else if (c == '\\') out += "\\\\";
+                    else out += c;
+                }
+                return out;
+            };
+            
+            std::string jsonData = "{"
+                "\"username\":\"" + escape_json(username) + "\","
+                "\"password\":\"" + escape_json(password) + "\","
+                "\"created_at\":\"" + escape_json(created_at) + "\""
+            "}";
+
             std::string key = std::string("apikey: ") + supabaseApikey;
             std::string authorization = std::string("Authorization: Bearer ") + supabaseApikey;
             // std::string api-

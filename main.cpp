@@ -7,7 +7,6 @@ const std::string WS_URL = "ws://localhost:5000";
 
 int main(){
 	initApp();
-	initClient(WS_URL);
 
 	authLoop();
 
