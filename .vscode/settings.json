@@ -71,5 +71,6 @@
         "ranges": "cpp",
         "valarray": "cpp"
     },
-    "cmake.sourceDirectory": "/workspaces/Chatty/src/server/ixwebsocket"
+    "cmake.sourceDirectory": "/workspaces/Chatty/src/server/ixwebsocket",
+    "C_Cpp.errorSquiggles": "disabled"
 }
