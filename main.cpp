@@ -1,16 +1,24 @@
 #include "src/ui/ui.hpp"
 #include "src/server/client.h"
+#include <ncurses.h>
 #include<string>
-
-
-const std::string WS_URL = "ws://localhost:5000";
 
 int main(){
 	initApp();
-
 	authLoop();
 
+	werase(authWindow);
+    wrefresh(authWindow);
+    delwin(authWindow);
+	authWindow = nullptr;
+	clear();
+	refresh();
+
+
+	std::string welcomeText = "Welcome to Chatty, " + user->username;
+	drawChatwindow(welcomeText);
+	chatLoop();
+
 	closeApp();
-	closeConnection();
 	return 0;
 }

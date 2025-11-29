@@ -1,4 +1,5 @@
 import asyncio
+import websockets
 from websockets.asyncio.server import serve
 
 
@@ -12,8 +13,8 @@ async def ws_handler(client):
             for consumer in consumers:
                 if consumer != client:
                     await consumer.send(message);
-    except websockets.exceptions.ConnectedClosed:
-        raise f"Websocket connection closed."
+    except websockets.ConnectionClosedError:
+        print("Client disconnected unexpectedly.")
     finally:
         consumers.remove(client)
 

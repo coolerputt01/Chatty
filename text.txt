@@ -1,2 +1,1 @@
-Build command:  clang++ main.cpp ./src/bycrypt/src/bcrypt.cpp ./src/bycrypt/src/blowfish.cpp -Isrc/se
-rver/ixwebsocket -Lsrc/server/ixwebsocket/build -Isrc/bycrypt/src -lixwebsocket -lz -lpthread -lncurses -lcurl -o main -std=c++23
+Build command:  clang++ main.cpp ./src/bycrypt/src/bcrypt.cpp ./src/bycrypt/src/blowfish.cpp -Isrc/server/ixwebsocket -Lsrc/server/ixwebsocket/build -Isrc/bycrypt/src -lixwebsocket -lz -lpthread -lncurses -lcurl -o main -std=c++23

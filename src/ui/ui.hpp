@@ -2,16 +2,25 @@
 #include <string>
 #include <cctype>
 #include <vector>
+#include <memory>
 #include <ncurses.h>
 #include "../user/user.h"
+#include "../server/client.h"
+
+//Implementing scroll with AI(GPT)
+//This is bottom here.
+int scrollOffset = 0;
+const std::string WS_URL = "ws://localhost:5000";
 
 
-//AUth state mananger
+//Auth state mananger
 enum class AuthState : short {
     SignIn,
     SignUp,
-    LoggedIn
+    InSession
 };
+std::unique_ptr<User> user;
+
 
 AuthState authState = AuthState::SignIn;
 
@@ -74,6 +83,7 @@ InputResult getInput(WINDOW* win, int y, int x, bool hide = false) {
                 wmove(win, y, x + input.size());
             }
         } else if (isprint(ch)) {
+            scrollOffset = 0;
             input.push_back(ch);
             mvwaddch(win, y, x + input.size() - 1, hide ? '*' : ch);
         }
@@ -84,6 +94,7 @@ InputResult getInput(WINDOW* win, int y, int x, bool hide = false) {
 //Close app
 void closeApp() {
     endwin();
+    closeConnection();
 }
 
 //chat TUI loop
@@ -92,10 +103,28 @@ void drawChatwindow(const std::string& text) {
     werase(chatWindow);
     box(chatWindow, 0, 0);
     int maxRows = getmaxy(chatWindow) - 2;
-    int start = texts.size() > maxRows ? texts.size() - maxRows : 0;
+    int maxCols = getmaxx(chatWindow) - 2;
+    
+    //Advised to wrap text lines in a temporary buffer which is good but lets see how far that gets us
+    std::vector<std::string> textLines;
+    for(auto& text : texts){
+        int start = 0;
+        //Iterate through each text and cache
+        while(start < static_cast<int>(text.size())){
+            textLines.push_back(text.substr(start,maxCols));
+            start += maxCols;
+        }
+    }
+
+    //Use cache for auto scrolling
+    int totalBufferSize = static_cast<int>(textLines.size());
+    int startIndex = std::max(0,totalBufferSize - maxRows - scrollOffset);
+
+    //row based printing
     int row = 1;
-    for (size_t i = start; i < texts.size(); i++)
-        mvwprintw(chatWindow, row++, 1, "%s", texts[i].c_str());
+    for(int i = startIndex;i < totalBufferSize && row < maxRows;i++){
+        mvwprintw(chatWindow, row++, 1, "%s", textLines[i].c_str());
+    }
     wrefresh(chatWindow);
 }
 
@@ -130,21 +159,33 @@ void authLoop() {
         if (authState == AuthState::SignIn) drawSignIn();
         else drawSignUp();
 
-        InputResult u = getInput(authWindow, 4, 12);
-        if (u.escapeKey) { closeApp(); exit(0); }
-        if (u.tabKey) { authState = (authState == AuthState::SignIn) ? AuthState::SignUp : AuthState::SignIn; continue; }
+        InputResult username = getInput(authWindow, 4, 12);
+        if (username.escapeKey){ 
+            closeApp(); exit(0); 
+        }
+        if (username.tabKey){
+            authState = (authState == AuthState::SignIn) ? AuthState::SignUp : AuthState::SignIn; continue;
+        }
 
-        InputResult p = getInput(authWindow, 5, 12, true);
-        if (p.escapeKey) { closeApp(); exit(0); }
-        if (p.tabKey) { authState = (authState == AuthState::SignIn) ? AuthState::SignUp : AuthState::SignIn; continue; }
+        InputResult password = getInput(authWindow, 5, 12, true);
+        if (password.escapeKey){ 
+            closeApp(); exit(0); 
+        }
+        if (password.tabKey){
+            authState = (authState == AuthState::SignIn) ? AuthState::SignUp : AuthState::SignIn; continue;
+        }
 
-        std::string confirm;
+        std::string confirmPassword;
         if (authState == AuthState::SignUp) {
-            InputResult c = getInput(authWindow, 6, 20, true);
-            if (c.escapeKey) { closeApp(); exit(0); }
-            if (c.tabKey) { authState = AuthState::SignIn; continue; }
-            confirm = c.text;
-            if (p.text != confirm) {
+            InputResult confirmInput = getInput(authWindow, 6, 20, true);
+            if (confirmInput.escapeKey){
+                closeApp(); exit(0); 
+            }
+            if (confirmInput.tabKey){
+                authState = AuthState::SignIn; continue; 
+            }
+            confirmPassword = confirmInput.text;
+            if (password.text != confirmPassword) {
                 mvwprintw(authWindow, 13, 2, "Passwords do not match!");
                 wrefresh(authWindow);
                 napms(1000);
@@ -152,18 +193,51 @@ void authLoop() {
             }
         }
 
-        if (!u.text.empty() && !p.text.empty()) {
-            User user(u.text, p.text);
-            if (authState == AuthState::SignIn) return;
-            else { user.createNewUser(); return; }
+        if (!username.text.empty() && !password.text.empty()) {
+            user = std::make_unique<User>(username.text, password.text);
+            if (authState == AuthState::SignIn){
+                authState = AuthState::InSession;
+                return;
+            }else {
+                user->createNewUser();
+                authState = AuthState::InSession;
+                return;
+                // drawChatwindow();
+                // drawInputWindow();
+            }
         }
     }
 }
 
 //draw input
-void drawInputWindow(const std::string& text) {
+void drawInputWindow() {
     werase(inputWindow);
     box(inputWindow, 0, 0);
-    mvwprintw(inputWindow, 1, 1, "%s", text.c_str());
+    InputResult text = getInput(inputWindow,1,1);
     wrefresh(inputWindow);
+}
+
+void chatLoop(){
+    initClient(WS_URL);
+    keypad(inputWindow, TRUE);
+    while(true){
+        int ch = wgetch(inputWindow);
+        if (ch == 17) {
+            closeApp();
+            exit(0);
+        }else if(ch == KEY_UP) {
+            scrollOffset += 1;
+        }else if(ch == KEY_DOWN){
+            scrollOffset = std::max(0,scrollOffset - 1);
+        }else if(ch == '\n'){
+            InputResult result = getInput(inputWindow,1,1);
+            if(!result.text.empty()){
+                texts.push_back(result.text);
+                sendMessage(result.text);
+                drawChatwindow(result.text);
+                scrollOffset = 0;
+            }
+        }
+
+    }
 }

@@ -9,6 +9,8 @@
 
 ix::WebSocket ws;
 
+void drawChatwindow(const std::string& text);
+
 void initClient(const std::string& url){
     ix::initNetSystem();
     ws.setUrl(url);
