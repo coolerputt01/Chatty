@@ -20,7 +20,7 @@ void initClient(const std::string& url){
             if(msg->type == ix::WebSocketMessageType::Message){
                 drawChatwindow(msg->str);
             }else if(msg->type == ix::WebSocketMessageType::Error){
-                std::cerr<<"Error occurred while connecting to ws"<< msg->errorInfo.reason <<std::endl<<std::flush;
+                std::cerr<<"Error occurred while connecting to ws"<< msg->errorInfo.reason <<'\n'<<std::flush;
             }
         }
     );

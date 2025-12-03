@@ -210,34 +210,51 @@ void authLoop() {
 }
 
 //draw input
-void drawInputWindow() {
+void drawInputWindow(std::string& textInput) {
     werase(inputWindow);
     box(inputWindow, 0, 0);
-    InputResult text = getInput(inputWindow,1,1);
+    mvwprintw(inputWindow, 1, 1, "%s", textInput.c_str());
     wrefresh(inputWindow);
 }
 
 void chatLoop(){
     initClient(WS_URL);
     keypad(inputWindow, TRUE);
+
+    std::string textInput;
+
     while(true){
         int ch = wgetch(inputWindow);
-        if (ch == 17) {
-            closeApp();
-            exit(0);
-        }else if(ch == KEY_UP) {
-            scrollOffset += 1;
-        }else if(ch == KEY_DOWN){
-            scrollOffset = std::max(0,scrollOffset - 1);
-        }else if(ch == '\n'){
-            InputResult result = getInput(inputWindow,1,1);
-            if(!result.text.empty()){
-                texts.push_back(result.text);
-                sendMessage(result.text);
-                drawChatwindow(result.text);
-                scrollOffset = 0;
-            }
+
+        switch(ch){
+            case KEY_UP:
+                scrollOffset++;
+                break;
+
+            case KEY_DOWN:
+                scrollOffset = std::max(0, scrollOffset-1);
+                break;
+
+            case 127:
+                if (!textInput.empty())
+                    textInput.pop_back();
+                break;
+
+            case '\n':
+                if(!textInput.empty()){
+                    sendMessage(textInput);
+                    drawChatwindow(textInput);
+                    textInput.clear();
+                    scrollOffset = 0;
+                }
+                break;
+            default:
+                if (isprint(ch))
+                    textInput.push_back(ch);
+                break;
+
         }
 
+        drawInputWindow(textInput);
     }
 }

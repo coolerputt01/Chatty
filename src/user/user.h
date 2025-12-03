@@ -11,10 +11,8 @@ char* supabaseApikey = std::getenv("SUPABASE_APIKEY");
 
 void validatePath(){
     if (supabaseUrl == nullptr || supabaseApikey == nullptr){
-        std::cerr<<"An error occured in opening path to env"<<std::endl<<std::flush;
+        std::cerr<<"An error occured in opening path to env"<<'\n'<<std::flush;
         std::exit(1);
-    }else {
-        std::cout<<supabaseUrl<<" "<<supabaseApikey<<std::endl;
     }
 }
 
@@ -73,7 +71,7 @@ class User {
 
             CURLcode res = curl_easy_perform(curl);
             if(res != CURLE_OK){
-                std::cerr << "curl_easy_perform() failed: "<< curl_easy_strerror(res) << "\n";
+                std::cerr << "curl_easy_perform() failed: "<< curl_easy_strerror(res) << "\n"<<std::flush;
             }
 
             curl_slist_free_all(headers);
