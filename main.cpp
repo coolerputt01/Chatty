@@ -1,6 +1,7 @@
 #include "src/ui/ui.hpp"
 #include "src/server/client.h"
 #include <ncurses.h>
+#include "src/messages/message.hpp"
 #include<string>
 
 int main(){
@@ -14,9 +15,12 @@ int main(){
 	clear();
 	refresh();
 
-
 	std::string welcomeText = "Welcome to Chatty, " + user->username;
-	drawChatwindow(welcomeText);
+	Message m;
+	m.text = welcomeText;
+	m.time = "";
+	m.username = "";
+	drawChatwindow(m);
 	chatLoop();
 
 	closeApp();

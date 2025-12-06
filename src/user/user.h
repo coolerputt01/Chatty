@@ -6,15 +6,14 @@
 #include <curl/curl.h>
 #include "../bycrypt/src/bcrypt.h"
 
-char* supabaseUrl = std::getenv("SUPABASE_URL");
-char* supabaseApikey = std::getenv("SUPABASE_APIKEY");
-
-void validatePath(){
-    if (supabaseUrl == nullptr || supabaseApikey == nullptr){
-        std::cerr<<"An error occured in opening path to env"<<'\n'<<std::flush;
-        std::exit(1);
-    }
-}
+std::string supabaseUrl;
+std::string supabaseApikey;
+// void validatePath(){
+//     if (supabaseUrl == nullptr || supabaseApikey == nullptr){
+//         std::cerr<<"An error occured in opening path to env"<<'\n'<<std::flush;
+//         std::exit(1);
+//     }
+// }
 
 
 #pragma once
@@ -35,7 +34,7 @@ class User {
         }
 
         void createNewUser(){
-            validatePath();
+            //validatePath();
             created_at.erase(std::remove(created_at.begin(), created_at.end(), '\n'), created_at.end());
             
             auto escape_json = [](const std::string& s) {
@@ -54,8 +53,8 @@ class User {
                 "\"created_at\":\"" + escape_json(created_at) + "\""
             "}";
 
-            std::string key = std::string("apikey: ") + supabaseApikey;
-            std::string authorization = std::string("Authorization: Bearer ") + supabaseApikey;
+            std::string key = "apikey: " + supabaseApikey;
+            std::string authorization = "Authorization: Bearer " + supabaseApikey;
             // std::string api-
             CURL* curl = curl_easy_init();
             struct curl_slist* headers = nullptr;
@@ -64,7 +63,7 @@ class User {
             headers = curl_slist_append(headers, "Content-Type: application/json");
             headers = curl_slist_append(headers, "Prefer: return=minimal");
 
-            curl_easy_setopt(curl, CURLOPT_URL, supabaseUrl);
+            curl_easy_setopt(curl, CURLOPT_URL, supabaseUrl.c_str());
             curl_easy_setopt(curl, CURLOPT_HTTPHEADER, headers);
             curl_easy_setopt(curl, CURLOPT_POSTFIELDS, jsonData.c_str());
             curl_easy_setopt(curl, CURLOPT_SSL_VERIFYPEER, 0L);

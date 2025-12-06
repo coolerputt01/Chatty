@@ -9,7 +9,7 @@ async def ws_handler(client):
     consumers.add(client)
     try:
         async for message in client:
-            print(f"Received message from client:{message}")
+            print(f"Received message from client: {message}")
             for consumer in consumers:
                 if consumer != client:
                     await consumer.send(message);

@@ -1,6 +1,7 @@
 #include "ixwebsocket/IXWebSocket.h"
 #include "ixwebsocket/IXNetSystem.h"
 #include "../ui/ui.hpp"
+#include "../messages/message.hpp"
 #include <string>
 #include <iostream>
 
@@ -9,16 +10,21 @@
 
 ix::WebSocket ws;
 
-void drawChatwindow(const std::string& text);
+void drawChatwindow(const Message& msg);
+std::string getCurrentTime();
 
-void initClient(const std::string& url){
+void initClient(const std::string& url,std::unique_ptr<User>& user){
     ix::initNetSystem();
     ws.setUrl(url);
 
     ws.setOnMessageCallback(
-        [](const ix::WebSocketMessagePtr& msg){
+        [&user](const ix::WebSocketMessagePtr& msg){
             if(msg->type == ix::WebSocketMessageType::Message){
-                drawChatwindow(msg->str);
+                Message m;
+                m.text = msg->str;
+                m.time = getCurrentTime();
+                m.username = user->username;
+                drawChatwindow(m);
             }else if(msg->type == ix::WebSocketMessageType::Error){
                 std::cerr<<"Error occurred while connecting to ws"<< msg->errorInfo.reason <<'\n'<<std::flush;
             }

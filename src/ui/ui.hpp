@@ -3,15 +3,26 @@
 #include <cctype>
 #include <vector>
 #include <memory>
+#include <chrono>
 #include <ncurses.h>
 #include "../user/user.h"
 #include "../server/client.h"
+#include "../messages/message.hpp"
 
 //Implementing scroll with AI(GPT)
 //This is bottom here.
 int scrollOffset = 0;
 const std::string WS_URL = "ws://localhost:5000";
 
+std::string getCurrentTime(){
+    std::string created_at;
+    auto now = std::chrono::system_clock::now();
+    std::time_t timeNow = std::chrono::system_clock::to_time_t(now);
+
+    created_at = std::ctime(&timeNow);
+
+    return created_at;
+}
 
 //Auth state mananger
 enum class AuthState : short {
@@ -31,7 +42,7 @@ WINDOW* inputWindow;
 WINDOW* authWindow;
 
 //Keep all chat texts
-std::vector<std::string> texts;
+std::vector<Message> messages;
 
 //Manage special inputs
 struct alignas(8) InputResult {
@@ -98,20 +109,32 @@ void closeApp() {
 }
 
 //chat TUI loop
-void drawChatwindow(const std::string& text) {
-    texts.push_back(text);
+void drawChatwindow(const Message& msg) {
+    messages.push_back(msg);
     werase(chatWindow);
     box(chatWindow, 0, 0);
     int maxRows = getmaxy(chatWindow) - 2;
     int maxCols = getmaxx(chatWindow) - 2;
+
+    static std::vector<std::string> textLines;
+    textLines.clear();
     
     //Advised to wrap text lines in a temporary buffer which is good but lets see how far that gets us
-    std::vector<std::string> textLines;
-    for(auto& text : texts){
+    std::vector<std::string> msgs;
+    for(auto& m : messages){
+        std::string prefix;
+
+        if (!m.username.empty()){
+            prefix = "[" + m.username + "]: ";
+        } else {
+            prefix = " ";
+        }
+        std::string full = prefix + m.text;
+
         int start = 0;
         //Iterate through each text and cache
-        while(start < static_cast<int>(text.size())){
-            textLines.push_back(text.substr(start,maxCols));
+        while(start < static_cast<int>(full.size())){
+            textLines.push_back(full.substr(start,maxCols));
             start += maxCols;
         }
     }
@@ -218,7 +241,7 @@ void drawInputWindow(std::string& textInput) {
 }
 
 void chatLoop(){
-    initClient(WS_URL);
+    initClient(WS_URL,user);
     keypad(inputWindow, TRUE);
 
     std::string textInput;
@@ -236,14 +259,19 @@ void chatLoop(){
                 break;
 
             case 127:
+            case KEY_BACKSPACE:
                 if (!textInput.empty())
                     textInput.pop_back();
                 break;
 
             case '\n':
                 if(!textInput.empty()){
+                    Message m;
+                    m.text = textInput;
+                    m.time = getCurrentTime();
+                    m.username = user->username;
                     sendMessage(textInput);
-                    drawChatwindow(textInput);
+                    drawChatwindow(m);
                     textInput.clear();
                     scrollOffset = 0;
                 }

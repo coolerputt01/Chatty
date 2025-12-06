@@ -4,8 +4,8 @@
 #include "../user/user.h"
 
 #pragma once
-struct alignas(4) Message {
+struct Message {
     std::string text;
     std::string time;
-    std::unique_ptr<User> user;
-} 
+    std::string username;
+};
